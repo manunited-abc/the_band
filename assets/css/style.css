@@ -3,11 +3,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    font-weight: 500;
+    
 }
 html{
     scroll-behavior: smooth;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     
 }
 #main{
@@ -149,14 +150,15 @@ html{
     line-height: 46px;
 }
 #slider{
+   
     position: relative;
     margin-top: 46px;
-    padding-top: 50%;
-    background: url('../img/slider/slider1.jpg') top center / cover no-repeat;
+    overflow: hidden;
+   
 }
 #slider .text-content{
     color: #fff;
-    bottom: 48px;
+    bottom: 140px;
     position:absolute;
     width: 100%;
     text-align: center;

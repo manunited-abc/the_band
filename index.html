@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
     <link rel="stylesheet" href="assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -34,17 +38,83 @@
                 <i class="search-icon ti-search"></i>
             </div>
             <div class="mobile-menu-btn">
-                <i class="menu-icon ti-menu"></i></div>
+                <i class="menu-icon ti-menu"></i>
+            </div>
         </div>
         <div id="slider">
-            <div class="text-content">
+            <!-- <div class="text-content">
                 <h2 class="text-heading">New York</h2>
                 <div class="text-description">Nguyen Khai Hieu</div>
+            </div> -->
+            <div class="slider-container">
+                <!-- Input star-->
+                <input type="radio" name="slider" id="radio1">
+                <input type="radio" name="slider" id="radio2">
+                <input type="radio" name="slider" id="radio3">
+                <input type="radio" name="slider" id="radio4">
+                <!-- Image slide -->
+                <div class="slide first">
+                    <img src="./assets/img/slider/1.jpg" alt="">
+                    <div class="text-content">
+                        <h2 class="text-heading">New York</h2>
+                        <div class="text-description">Nguyen Khai Hieu</div>
+                    </div>
+
+                </div>
+                <div class="slide">
+                    <img src="./assets/img/slider/2.jpg" alt="">
+                    <div class="text-content">
+                        <h2 class="text-heading">New York</h2>
+                        <div class="text-description">Nguyen Khai Hieu</div>
+                    </div>
+
+                </div>
+                <div class="slide ">
+                    <img src="./assets/img/slider/3.jpg" alt="">
+                    <div class="text-content">
+                        <h2 class="text-heading">New York</h2>
+                        <div class="text-description">Nguyen Khai Hieu</div>
+                    </div>
+
+                </div>
+                <div class="slide">
+                    <img src="./assets/img/slider/4.jpg" alt="">
+                    <div class="text-content">
+                        <h2 class="text-heading">New York</h2>
+                        <div class="text-description">Nguyen Khai Hieu</div>
+                    </div>
+
+                </div>
+
+                <!-- Automatic  -->
+                <div class="navigation-auto">
+                    <div class="auto-btn1">
+
+                    </div>
+                    <div class="auto-btn2">
+
+                    </div>
+                    <div class="auto-btn3">
+
+                    </div>
+                    <div class="auto-btn4">
+
+                    </div>
+                </div>
+                <!-- Manual -->
+
+            </div>
+            <div class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+
             </div>
         </div>
         <div id="content">
             <!-- About section -->
-            <div id ="band" class="content-section">
+            <div id="band" class="content-section">
                 <h2 class="section-heading">THE BAND</h2>
                 <p class="section-sub-heading">We love music</p>
                 <p class="about-text">
@@ -76,7 +146,7 @@
                         </p>
                         <img src="./assets/img/member/member2.jpg" alt="" class="member-img">
                     </div>
-  
+
                 </div>
             </div>
             <!-- Tour section -->
@@ -119,7 +189,7 @@
                                 <button class="btn s-full-width js-buy-ticket ">Buy Tickets</button>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -127,7 +197,7 @@
             <div id="contact" class="content-section">
                 <h2 class="section-heading">CONTACT</h2>
                 <p class="section-sub-heading">Fan? Drop a note!</p>
-                
+
                 <div class="row contact-content ">
                     <div class="col col-half s-col-full contact-infor">
                         <p><i class="ti-location-pin"></i>Chicago, US</p>
@@ -138,16 +208,16 @@
                         <form action="">
                             <div class="row">
                                 <div class="col col-half s-col-full ">
-                                    <input type="text" required name="Name"class="form-control" placeholder="Name">
+                                    <input type="text" required name="Name" class="form-control" placeholder="Name">
                                 </div>
                                 <div class="col col-half s-col-full s-mt-8 ">
                                     <input type="email" required name="Email" class="form-control" placeholder="Email">
                                 </div>
-                                
+
                             </div>
                             <div class="row mt-8">
                                 <div class="col col-full">
-                                    <input type="text"  required class="form-control" placeholder="Message">
+                                    <input type="text" required class="form-control" placeholder="Message">
                                 </div>
                             </div>
                             <input class="btn mt-16 pull-right s-full-width" type="submit" value="SEND">
@@ -160,7 +230,7 @@
             <div class="map-section">
                 <img src="./assets/img/place/map.jpg" alt="">
             </div>
-        </div>    
+        </div>
         <div id="footer">
             <div class="socials-list">
                 <a href=""><i class="ti-facebook"></i></a>
@@ -237,34 +307,41 @@
 
     var header = document.getElementById('header')
     var mobileMenu = document.querySelector('.mobile-menu-btn')
-    var headerHeight= header.clientHeight;
+    var headerHeight = header.clientHeight;
     //Dong mo mobile menu
-    mobileMenu.onclick = function() {
+    mobileMenu.onclick = function () {
         var isClose = header.clientHeight === headerHeight;
-        if(isClose){
-            header.style.height= 'auto'
+        if (isClose) {
+            header.style.height = 'auto'
         }
-        else{
-            header.style.height=null
+        else {
+            header.style.height = null
         }
     }
     //Tu dong dong khi chon menu
     var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
-    for(var i =0; i<menuItems.length;i++){
+    for (var i = 0; i < menuItems.length; i++) {
         var menuItem = menuItems[i];
-        menuItem.onclick =function(event){
-            var isParentMenu= this.nextElementSibling && this.nextElementSibling.classList.contains('subnav')
-            if(isParentMenu){
+        menuItem.onclick = function (event) {
+            var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav')
+            if (isParentMenu) {
                 event.preventDefault();
-            }else{
-               
-                header.style.height=null
+            } else {
+
+                header.style.height = null
             }
-    }
+        }
     }
 </script>
 <script>
-
+    var counter = 1;
+    setInterval(function () {
+        document.getElementById('radio' + counter).checked = true;
+        counter++;
+        if (counter > 4) {
+            counter = 1;
+        }
+    }, 5000);
 </script>
 
 </html>
